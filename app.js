@@ -3,6 +3,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 var app = express();
+const port = process.env.PORT || 8080;
 
 hbs.registerPartials(__dirname + '/views/partials');
 
@@ -59,6 +60,6 @@ app.get('/404', (request, response) => {
     })
 });
 
-app.listen(8080, () => {
-    console.log('Server is up on the port 8080')
+app.listen(port, () => {
+    console.log(`Server is up on the port ${port}`)
 });
